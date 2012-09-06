@@ -6,18 +6,22 @@
 # MEMO:: Need update for fortran >= 95 sample program
 #------------------------------------------------------------------------
 AC_DEFUN([DC_FORTRAN_CHECK],
-         [AC_CACHE_CHECK(
-           [$FC can handle fortran >= 90 program.],
-           [ac_cv_f90_check],
-           [AC_LANG_PUSH(Fortran)
-            AC_FC_SRCEXT(f90)
-            ax_f90_check=""
-            AC_COMPILE_IFELSE([
+[
+AC_CACHE_CHECK(
+ [$FC can handle fortran >= 90 program.],
+ [ac_cv_dcf90_check],
+ [
+  AC_LANG_PUSH(Fortran)
+  ax_f90_check=""
+  AC_COMPILE_IFELSE([
 program conftest
   real, parameter :: a = 3.141592
 end program conftest
-                              ],[ax_f90_check="OK"],[ax_f90_check="NG"])
-            ac_cv_f90_check=$ax_f90_check
-            AC_LANG_POP(Fortran)
-           ])
-        ])
+                     ],[ax_f90_check="yes"],[ax_f90_check="no"])
+  ac_cv_dcf90_check=$ax_f90_check
+  AC_LANG_POP(Fortran)
+  if test x"$ac_cv_dcf90_check" = x"no" ; then
+    AC_MSG_ERROR([$FC can not handle fortran >= 90 program.])
+  fi
+ ])
+])
