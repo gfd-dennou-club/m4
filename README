@@ -1,0 +1,51 @@
+= Unofficial m4 macro
+
+"Unofficial" means "there are not part of GNU Autoconf-macro archives".
+These macro are originally written by Eizi Toyoda and Yasuhiro Morikawa 
+for simple configure scripts. 
+
+== dc_args_with.m4: handling "--with-foo" with cache support
+
+USAGE:
+
+  DC_ARG_WITH(
+  [foo],            #=> --with-foo
+  [description],    #=> output of "configure --help"
+  ac_cv_foo)        #=> autoconf variable, don't add line-break 
+
+== dc_fortran_check.m4: fortran (>=90) checker
+
+USAGE:
+
+  DC_FORTRAN_CHECK
+
+== dc_fortran_module_flag.m4: check module inclusion flag
+
+This is similar "ax_f90_module_flag.m4" by GNU Autoconf-macro archives, but
+support Fujitsu Fortran Driver and HITACHI FORTRAN 90. This also output 
+"MODPATHFLAG" into Makefie. Please set @MODPATHFLAG@ into Makefile.am.
+
+USAGE:
+
+  DC_FORTRAN_MODULE_FLAG
+
+== dc_fortran_module_type.m4: check module type
+
+This is similar "ax_f90_module_extension.m4" by GNU Autoconf-macro archives, 
+but support Fujitsu Fortran Driver and HITACHI FORTRAN 90. This also output
+"MODEXT" and "F90MODTYPE". Please set @MODEXT@, @F90MODTYPE@ into Makefile.am.
+
+USAGE:
+  DC_FORTRAN_MODULE_TYPE
+
+== dc_fortran_get{arg,env}.m4: check GET{ARG,ENV} implementation
+
+Please set @SYSDEP{ENV,ARG}@ into Makefile.am.
+
+USAGE:
+  DC_ARG_WITH(
+    [getarg],
+    [GETARG runtime procedure:(f2003std|nostd)],
+    ac_cv_dcf90_sysdeparg)
+  DC_FORTRAN_GETARG
+
