@@ -1,8 +1,11 @@
 = Unofficial m4 macro
 
 "Unofficial" means "there are not part of GNU Autoconf-macro archives".
-These macro are originally written by Eizi Toyoda and Yasuhiro Morikawa 
-for simple configure scripts. 
+
+These macro scripts are originally written by Eizi Toyoda and 
+Yasuhiro Morikawa for simple configure scripts.
+
+Current maintainer is Youhei SASAKI <uwabami@gfd-dennou.org>
 
 == dc_args_with.m4: handling "--with-foo" with cache support
 
