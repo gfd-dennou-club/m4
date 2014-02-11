@@ -10,11 +10,13 @@ AC_DEFUN([DC_ARG_WITH],
   AC_ARG_WITH([$1],
     AC_HELP_STRING([--with-$1],[$2]),
     [
+    AC_MSG_CHECKING([$2])
     if test x"$withval" != x"" ; then
-      AC_MSG_CHECKING([$2])
       $3=$withval
-      AC_MSG_RESULT([$$3])
+    else
+      $3=no
     fi
+    AC_MSG_RESULT([$$3])
     ],
    [AC_CACHE_CHECK(
      [$2],

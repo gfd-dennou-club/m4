@@ -1,9 +1,27 @@
 # _DC_FORTRAN_MODULE_FLAG
 #-------------------------------------------------------------------------
-# Authors:: Youhei SASAKI, Eizi TOYODA, Yasuhiro Morikawa
-# Copyright:: 2002-2012 DCMODEL Development Group, All rights, reserved.
-# License:: MIT(Expat), See COPYRIGHT in detail
-# MEMO: Check module path flags.
+# COPYRIGHT
+#
+#   Copyright (c) 2009 Luc Maisonobe <luc@spaceroots.org>
+#   Copyright (c) 2009 Julian C. Cummings <cummings@cacr.caltech.edu>
+#   Copyright (c) 2009 Alexander Pletzer <pletzer@txcorp.com>
+#   Copyright (c) 2009-2014 Youhei SASAKI <uwabami@gfd-dennou.org>
+#
+# LICENSE
+#
+#   Copying and distribution of this file, with or without modification, are
+#   permitted in any medium without royalty provided the copyright notice
+#   and this notice are preserved. This file is offered as-is, without any
+#   warranty.
+#
+# DESCRIPTION: This is enhanced version of "ax_f90_module_flag.m4"
+#   Original Version:
+#     http://www.gnu.org/software/autoconf-archive/ax_f90_module_flag.html
+#
+# MEMO:
+#  - Fujitsu Fortran Driver: "-Am -I"
+#  - HITACHI Fortran: "-mod"
+#
 #-------------------------------------------------------------------------
 AC_DEFUN([DC_FORTRAN_MODULE_FLAG],
 [
@@ -44,8 +62,7 @@ done
 rm -fr tmpdir_$i
 AC_LANG_POP(Fortran)
 if test x"$ac_cv_dcf90_modflag" = x"NG" ; then
-  AC_MSG_ERROR([unable to find $FC's module include flag]) #'
+  AC_MSG_ERROR([unable to find $FC's compiler flag for modules inclusion]) #'
 fi
 ])
-AC_SUBST(MODPATHFLAG, ${ac_cv_dcf90_modflag})
 ])

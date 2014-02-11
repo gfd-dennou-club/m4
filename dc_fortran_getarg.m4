@@ -53,5 +53,4 @@ hitachi)
   AC_MSG_ERROR([Can't find GETARG implementation. Please reconfigure --with-getarg={f2003std,nostd}])
   ;;
 esac
-AC_SUBST(SYSDEPARG, $ac_cv_dcf90_sysdeparg)
 ])
