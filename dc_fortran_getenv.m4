@@ -54,4 +54,5 @@ nogetenv)
     AC_MSG_ERROR([Can't find GETENV implementation. Please reconfigure --with-getenv={f2003std,nostd,nogetenv}]) #'
     ;;
 esac
+AC_SUBST(SYSDEPENV, $ac_cv_dcf90_sysdepenv)
 ])

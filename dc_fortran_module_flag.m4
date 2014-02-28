@@ -1,13 +1,10 @@
 # _DC_FORTRAN_MODULE_FLAG
 #-------------------------------------------------------------------------
-# COPYRIGHT
-#
+# LICENSE
 #   Copyright (c) 2009 Luc Maisonobe <luc@spaceroots.org>
 #   Copyright (c) 2009 Julian C. Cummings <cummings@cacr.caltech.edu>
 #   Copyright (c) 2009 Alexander Pletzer <pletzer@txcorp.com>
 #   Copyright (c) 2009-2014 Youhei SASAKI <uwabami@gfd-dennou.org>
-#
-# LICENSE
 #
 #   Copying and distribution of this file, with or without modification, are
 #   permitted in any medium without royalty provided the copyright notice
@@ -17,11 +14,9 @@
 # DESCRIPTION: This is enhanced version of "ax_f90_module_flag.m4"
 #   Original Version:
 #     http://www.gnu.org/software/autoconf-archive/ax_f90_module_flag.html
-#
 # MEMO:
 #  - Fujitsu Fortran Driver: "-Am -I"
 #  - HITACHI Fortran: "-mod"
-#
 #-------------------------------------------------------------------------
 AC_DEFUN([DC_FORTRAN_MODULE_FLAG],
 [
