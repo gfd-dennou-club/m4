@@ -60,4 +60,5 @@ if test x"$ac_cv_dcf90_modflag" = x"NG" ; then
   AC_MSG_ERROR([unable to find $FC's compiler flag for modules inclusion]) #'
 fi
 ])
+AC_SUBST(MODPATHFLAG, $ac_cv_dcf90_modflag)
 ])

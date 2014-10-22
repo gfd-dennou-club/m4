@@ -64,4 +64,6 @@ hitachi.f90)
   ac_cv_dcf90_modext=.f90
   ;;
 esac
+AC_SUBST(F90MODTYPE, $ac_cv_dcf90_modtype)
+AC_SUBST(MODEXT, $ac_cv_dcf90_modext)
 ])
